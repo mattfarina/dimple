@@ -3,7 +3,7 @@
 //
 // A simple example:
 //
-//     d := NewDimple()
+//     d := dimple.NewDimple()
 //     kirk := NewKirk()
 //     d.SetValue("kirk", kirk)
 //     k := d.Get("kirk").(Kirk)
@@ -13,7 +13,7 @@
 //
 // A generator example. Sometimes you need to generate a new item each time.
 //
-//     d := NewDimple()
+//     d := dimple.NewDimple()
 //     d.SetGenerator("tribble", func(d *dimple.Dimple) interface{} {
 //         return NewTribbles()
 //     })
@@ -25,7 +25,7 @@
 // Generator items in the container have access to the other items in the
 // container. For example,
 //
-//     d := NewDimple()
+//     d := dimple.NewDimple()
 //     kirk := NewKirk()
 //     d.SetValue("kirk", kirk)
 //     d.SetGenerator("tribble", func(d *dimple.Dimple) interface{} {
@@ -39,7 +39,7 @@
 //
 // Items in the container can be extended. For example,
 //
-//     d := NewDimple()
+//     d := dimple.NewDimple()
 //     d.SetGenerator("tribble", func(d *dimple.Dimple) interface{} {
 //         return NewTribbles(d.Get("kirk").(Kirk))
 //     })

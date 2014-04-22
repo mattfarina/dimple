@@ -4,7 +4,7 @@
 A simple example:
 
 ```go
-d := NewDimple()
+d := dimple.NewDimple()
 kirk := NewKirk()
 d.SetValue("kirk", kirk)
 k := d.Get("kirk").(Kirk)
@@ -15,7 +15,7 @@ In this simple example Kirk is attached to the container. Every time `Get` is ca
 A generator example. Sometimes you need to generate a new item each time.
 
 ```go
-d := NewDimple()
+d := dimple.NewDimple()
 d.SetGenerator("tribble", func(d *dimple.Dimple) interface{} {
     return NewTribbles()
 })
@@ -28,7 +28,7 @@ In the case of generators, a new item is returned each time.
 Generator items in the container have access to the other items in the container. For example,
 
 ```go
-d := NewDimple()
+d := dimple.NewDimple()
 kirk := NewKirk()
 d.SetValue("kirk", kirk)
 d.SetGenerator("tribble", func(d *dimple.Dimple) interface{} {
@@ -41,7 +41,7 @@ This is useful for many cases. For example, the configuration for a mail system 
 Items in the container can be extended. For example,
 
 ```go
-d := NewDimple()
+d := dimple.NewDimple()
 d.SetGenerator("tribble", func(d *dimple.Dimple) interface{} {
     return NewTribbles(d.Get("kirk").(Kirk))
 })
